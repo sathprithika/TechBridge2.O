@@ -57,7 +57,7 @@ const LoginPage = () => {
       className="flex justify-center items-center bg-cover h-screen"
       style={{ backgroundImage: `url(${backgroundImage})` }}>
       <div className="flex justify-center items-center w-4/5 h-4/5 m-4 p-4 bg-white rounded-xl">
-        <div className="flex justify-center items-center w-3/5 mr-10 border-r-2 border-gray-300">
+        <div className="flex justify-center items-center w-2/5 mr-10 border-r-2 border-gray-300 rounded-xl">
           <img src={loginImage} alt="Login" />
         </div>
         <div className="w-2/5">

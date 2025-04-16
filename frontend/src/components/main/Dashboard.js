@@ -53,7 +53,7 @@ function Dashboard() {
 
   return (
     <div className="flex flex-row gap-4 px-8 py-4 h-screen overflow-auto" style={{ maxHeight: "100%" }}>
-      <div className="flex flex-col w-1/2 p-4 bg-green-200 rounded-md shadow-md overflow-auto">
+      <div className="flex flex-col w-1/2 p-4 bg-purple-300 rounded-md shadow-md overflow-auto">
         <h1 className="text-gray-500 font-bold tracking-wider underline text-xl text-center">
           Career Guidance Analysis
         </h1>
@@ -102,7 +102,7 @@ function Dashboard() {
         )}
       </div>
 
-      <div className="flex flex-col w-1/2 p-4 bg-green-200 rounded-md shadow-md overflow-auto">
+      <div className="flex flex-col w-1/2 p-4 bg-purple-300 rounded-md shadow-md overflow-auto">
         <h1 className="text-gray-500 font-bold tracking-wider underline text-xl text-center">
           Knowledge Test Analysis
         </h1>
@@ -132,7 +132,7 @@ function Dashboard() {
             <div className="mt-4 rounded-md">
               <Chart type="column" chartData={testAnnalys} />
             </div>
-            <div className="flex flex-row gap-4 justify-between bg-yellow-100 p-2">
+            <div className="flex flex-row gap-4 justify-between bg-purple-600 p-2">
               <p>1 - Beginner</p>
               <p>2 - Intermediate</p>
               <p>3 - Advanced</p>

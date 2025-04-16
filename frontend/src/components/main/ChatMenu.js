@@ -12,7 +12,7 @@ const ChatMenu = () => {
       {!chatType && (
         <div className="flex flex-row gap-10 mb-2">
           <div className="w-1/2">
-            <div className="h-40 border border-gray-500 p-4 mb-5 rounded-md shadow-md bg-green-300 bg-opacity-80">
+            <div className="h-40 border border-gray-500 p-4 mb-5 rounded-md shadow-md bg-purple-300 bg-opacity-80">
               <p className="text-black text-md text-justify">
                 Do you want career guidance?
                 <br />
@@ -33,7 +33,7 @@ const ChatMenu = () => {
             />
           </div>
           <div className="w-1/2">
-            <div className="h-40 border border-gray-500 p-4 mb-5 rounded-md shadow-md bg-green-300 bg-opacity-80">
+            <div className="h-40 border border-gray-500 p-4 mb-5 rounded-md shadow-md bg-purple-300 bg-opacity-80">
               <p className="text-black text-md text-justify">
                 Do you want to test your knowledge level in skills?
                 <br />
@@ -79,7 +79,7 @@ const ChatMenu = () => {
           <p className="text-red-500">
             Please provide your feedback :{" "}
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSea7qpZKb7xOir-WlJdpiY4yhpPgZ_2KwXQ4SBM1F6J0_fp2Q/viewform?usp=send_form"
+              href="https://forms.gle/NrKvxriPmEPvYbvt9"
               rel="noreferrer"
               className="text-blue-500"
               target="_blank">

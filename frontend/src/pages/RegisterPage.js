@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import backgroundImage from "../assests/images/background.jpg";
-import loginImage from "../assests/images/reg.jpg";
+import loginImage from "../assests/images/reg.png";
 import TextBox from "../components/TextBox";
 import Button from "../components/Button";
 import { UserIcon, EnvelopeIcon, LockClosedIcon } from "@heroicons/react/24/outline";
@@ -44,20 +44,24 @@ const RegisterPage = () => {
   return (
     <div
       className="flex justify-center items-center bg-cover h-screen"
-      style={{ backgroundImage: `url(${backgroundImage})` }}>
-      <div className="flex justify-center items-center w-4/5 h-4/5 m-4 p-4 bg-white rounded-xl">
-        <div className="flex justify-center items-center w-3/5 mr-10 border-r-2 border-gray-300">
-          <img src={loginImage} alt="Login" />
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      <div className="flex justify-center items-center w-4/5 sm:w-3/4 md:w-2/3 h-auto sm:h-4/5 p-8 bg-white rounded-xl shadow-lg border-2 border-gray-200">
+        {/* Left Section - Image */}
+        <div className="hidden sm:block w-1/2 mr-10 border-r-2 border-gray-300">
+          <img src={loginImage} alt="Register" className="rounded-lg shadow-md transform hover:scale-105 transition duration-300" />
         </div>
-        <div className="w-2/5">
-          <form className="mr-10 ml-4" onSubmit={handleSubmit}>
-            <p className="font-sans text-gray-400 text-xl text-center font-semibold tracking-widest mb-5">
-              REGISTER!
+
+        {/* Right Section - Form */}
+        <div className="w-full sm:w-1/2">
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            <p className="font-sans text-gray-600 text-4xl text-center font-semibold tracking-widest mb-8">
+              Join Us and Grow Your Career
             </p>
 
             <TextBox
               placeholder="Enter your name"
-              label="Name"
+              label="Full Name"
               type="text"
               Icon={UserIcon}
               value={name}
@@ -67,8 +71,8 @@ const RegisterPage = () => {
 
             <TextBox
               placeholder="Enter your email"
-              label="Email"
-              type="text"
+              label="Email Address"
+              type="email"
               Icon={EnvelopeIcon}
               value={email}
               setValue={setEmail}
@@ -86,7 +90,7 @@ const RegisterPage = () => {
             />
 
             <TextBox
-              placeholder="Re enter your password"
+              placeholder="Re-enter your password"
               label="Confirm Password"
               type="password"
               Icon={LockClosedIcon}
@@ -97,9 +101,9 @@ const RegisterPage = () => {
 
             <Button name="Sign Up" />
 
-            <p className="text-gray-400 mt-4 text-center">
-              Do have an account?{" "}
-              <Link to="/login" className="text-indigo-700">
+            <p className="text-gray-600 text-center">
+              Already have an account?{" "}
+              <Link to="/login" className="text-indigo-600 font-semibold hover:text-indigo-800">
                 Log In
               </Link>
             </p>

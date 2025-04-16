@@ -74,7 +74,7 @@ function ChatTest({ visible, onClose }) {
           <div className="flex flex-col gap-4 overflow-y-auto mb-10">
             {!chat && (
               <div className="flex justify-start">
-                <div className="rounded-lg p-2 bg-green-200 text-left mr-2 w-2/3">{messageTest.initial}</div>
+                <div className="rounded-lg p-2 bg-purple-200 text-left mr-2 w-2/3">{messageTest.initial}</div>
               </div>
             )}
 
@@ -83,7 +83,7 @@ function ChatTest({ visible, onClose }) {
                 {chat.message.map((message, index) => (
                   <div key={index}>
                     <div className={"flex justify-start"}>
-                      <div className={"p-2 bg-green-200 w-2/3 rounded-md shadow-md"}>
+                      <div className={"p-2 bg-purple-200 w-2/3 rounded-md shadow-md"}>
                         {message.includes("\n**") ? (
                           message.split("\n").map((line, idx) => {
                             if (line.startsWith("**")) {
@@ -146,7 +146,7 @@ function ChatTest({ visible, onClose }) {
                 required={true}
               />
 
-              <div className="w-20 flex items-center bg-blue-600 rounded-r-md">
+              <div className="w-20 flex items-center bg-purple-600 rounded-r-md">
                 <Button type="submit" name="Send" />
               </div>
             </form>

@@ -1,94 +1,86 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import backgroundImage from "../assests/images/background.jpg";
-import logo from "../assests/images/logo.png";
-import About from "../assests/images/about.jpg";
-import W1Image from "../assests/images/slide1.jpg";
-import W2Image from "../assests/images/slide2.jpg";
+import logo from "../assests/images/logo.jpg";
+import featureImage from "../assests/images/slide1.jpg"; // replace with your icon
+
+const features = [
+  {
+    title: "AI-Powered Guidance",
+    description: "Personalized career paths using AI-based skill and interest analysis.",
+  },
+  {
+    title: "Knowledge Assessment",
+    description: "Test what you know and explore areas you can grow in.",
+  },
+  {
+    title: "Interactive Dashboard",
+    description: "Real-time insights to help you stay motivated and track progress.",
+  },
+];
 
 const WelcomePage = () => {
   return (
-    <div className="bg-cover min-h-screen" style={{ backgroundImage: `url(${backgroundImage})` }}>
-      <div className="flex flex-row px-20 fixed top-0 right-0 left-0">
-        <div className="flex flex-row justify-start w-1/2 py-4 item-center">
-          <img src={logo} alt="logo" className="w-10 h-10 rounded-xl" />
-          <div className="font-serif text-2xl text-gray-700 font-bold tracking-widest ml-8 py-1">
-            AI Self Assistant
-          </div>
+    <div
+      className="min-h-screen bg-cover bg-center relative text-white font-sans"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-30 backdrop-blur-sm"></div>
+
+      {/* Top Nav */}
+      <div className="relative z-10 flex justify-between items-center px-8 py-6">
+        <div className="flex items-center gap-3">
+          <img src={logo} alt="Logo" className="w-10 h-10 rounded-full" />
+          <h1 className="text-2xl font-bold">TECH BRIDGE</h1>
         </div>
-        <div className="flex flex-row justify-end w-1/2 py-4 item-center">
+        <div className="space-x-4 flex items-center">
           <Link
             to="/register"
-            className="text-white px-5 py-2 mx-2 rounded bg-blue-600 hover:bg-blue-700 ring-2">
+            className="px-6 py-3 bg-gray-100 text-gray-900 rounded-xl font-semibold text-lg shadow-md hover:bg-purple-700 hover:text-white transition-all duration-300"
+          >
             Sign Up
           </Link>
           <Link
             to="/login"
-            className="text-white px-5 py-2 mx-2 rounded bg-blue-600 hover:bg-blue-700 ring-2">
+            className="px-6 py-3 bg-gray-100 text-gray-900 rounded-xl font-semibold text-lg shadow-md hover:bg-purple-700 hover:text-white transition-all duration-300"
+          >
             Sign In
           </Link>
         </div>
       </div>
 
-      <div className="flex flex-col gap-5 px-20 py-4">
-        <div className="flex justify-start mt-16">
-          <div className="w-3/5 flex flex-row h-52 bg-blue-400 bg-opacity-80 rounded-lg">
-            <div className="w-1/2">
-              <img src={About} alt="about" className="h-full w-full border rounded-l-lg" />
-            </div>
-            <div className="w-1/2 p-6 flex items-center justify-center">
-              <p className="text-white text-md text-justify">
-                About
-                <br />
-                <br />
-                "This platform combines a chat interface and a dashboard. It can be assist you to testing the
-                knowledge level in your skills and providing career guidance with the AI technology."
-              </p>
-            </div>
-          </div>
+      {/* Main Content */}
+      <div className="relative z-10 flex flex-col sm:flex-row px-8 sm:px-16 pt-12 pb-20">
+        {/* Left */}
+        <div className="w-full sm:w-1/2 mt-20">
+          <h2 className="text-5xl font-extrabold leading-tight mb-6">
+            Empower Your Career Journey
+          </h2>
+          <p className="text-lg max-w-md">
+            Discover your strengths, bridge your knowledge gaps, and unlock your potential with Tech Bridge.
+          </p>
         </div>
 
-        <div className="flex justify-end">
-          <div className="w-3/5 flex flex-row h-52 bg-blue-400 bg-opacity-80 rounded-lg">
-            <div className="w-1/2">
-              <img src={W1Image} alt="w1" className="h-full w-full border rounded-l-lg" />
+        {/* Right: Feature Cards */}
+        <div className="w-full sm:w-1/2 flex flex-col gap-6 mt-10 sm:mt-6">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="flex items-center p-6 sm:p-8 bg-white bg-opacity-20 rounded-2xl backdrop-blur-md shadow-xl"
+            >
+              <img
+                src={featureImage}
+                alt={feature.title}
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded-md mr-4 sm:mr-6"
+              />
+              <div>
+                <h3 className="font-semibold text-xl mb-2">{feature.title}</h3>
+                <p className="text-base">{feature.description}</p>
+              </div>
             </div>
-            <div className="w-1/2 p-6 flex items-center justify-center">
-              <p className="text-white text-md text-justify">
-                Do you want career guidance?
-                <br />
-                <br />
-                "We provide personalized career guidance and advice based on your interests and skills with AI
-                technology. Additionally, we provide recommendations to help you navigate and excel in your
-                career path."
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
-
-        <div className="flex justify-start">
-          <div className="w-3/5 flex flex-row h-52 bg-blue-400 bg-opacity-80 rounded-lg">
-            <div className="w-1/2">
-              <img src={W2Image} alt="w1" className="h-full w-full border rounded-l-lg" />
-            </div>
-            <div className="w-1/2 p-6 flex items-center justify-center">
-              <p className="text-white text-md text-justify">
-                Do you want to test your knowledge level in skills?
-                <br />
-                <br />
-                "We provide a facility to check your knowledge level through a chat interface with AI
-                technology."
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="pb-5 mt-4">
-        <div className="text-gray-700 text-sm font-semibold flex justify-center">
-          Copyright © 2024 by Kavinda Deshan, All rights reserved.
-        </div>
-        <div className="text-white text-md flex justify-center">Designed by Kavinda</div>
       </div>
     </div>
   );
